@@ -34,7 +34,6 @@ void draw(){
 class Star{
   
   float x, y;
-  float size;
   
   float lastX, lastY;
   
@@ -44,7 +43,6 @@ class Star{
     y = random(-height/2, height/2);
     lastX = x;
     lastY = y;
-    size = random(1, 3);
   }
   
   void draw(){
@@ -54,14 +52,13 @@ class Star{
   void update(){
     lastX = x;
     lastY = y;
-    float speed = 1.025;
+    float speed = 1.05;
     x *= speed;
     y *= speed;
-    size+= 0.1;
   }
  
   boolean isVisible(){
-    float s = size/2;
+    float s = new PVector(x, y).dist(new PVector(lastX, lastY));
     float w = width/2;
     float h = height/2;
     return !((x+s) > w || (x+s) < -w && (y+s) > h || (y+s) < -h);
