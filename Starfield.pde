@@ -54,8 +54,9 @@ class Star{
   void update(){
     lastX = x;
     lastY = y;
-    x *= 1.025;
-    y *= 1.025;
+    float speed = 1.025;
+    x *= speed;
+    y *= speed;
     size+= 0.1;
   }
  
