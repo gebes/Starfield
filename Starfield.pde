@@ -12,7 +12,7 @@ void setup(){
 
 void draw(){
  background(0);
- noStroke();
+ stroke(255);
  translate(width/2, height/2); 
  
  for(int i = 0; i < stars.length; i++){
@@ -36,21 +36,27 @@ class Star{
   float x, y;
   float size;
   
+  float lastX, lastY;
+  
   
   Star(){
     x = random(-width/2, width/2);
     y = random(-height/2, height/2);
+    lastX = x;
+    lastY = y;
     size = random(1, 3);
   }
   
   void draw(){
-   ellipse(x, y, size, size);
+   line(x, y, lastX, lastY);
   }
   
   void update(){
-    x *= 1.05;
-    y *= 1.05;
-    size++;
+    lastX = x;
+    lastY = y;
+    x *= 1.025;
+    y *= 1.025;
+    size+= 0.1;
   }
  
   boolean isVisible(){
