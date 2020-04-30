@@ -14,8 +14,10 @@ void draw(){
  noStroke();
  translate(width/2, height/2); 
  
- for(int i = 0; i < stars.length; i++)
-   stars[i].draw();
+ for(int i = 0; i < stars.length; i++){
+     stars[i].update();
+     stars[i].draw();
+ }
  
  
 }
@@ -38,7 +40,9 @@ class Star{
   }
   
   void update(){
-    
+    x*= 1.05;
+    y*= 1.05;
+    size++;
   }
   
 }
