@@ -60,7 +60,7 @@ class Star {
   float s = new PVector(x, y).dist(new PVector(lastX, lastY));
   float w = width / 2;
   float h = height / 2;
-  return !((x + s) > w || (x + s) < -w && (y + s) > h || (y + s) < -h);
+  return !((x - s) > w || (x + s) < -w && (y - s) > h || (y + s) < -h);
  }
 
 }
