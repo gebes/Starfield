@@ -11,4 +11,4 @@ A No Man's Sky like star effect
 
 ## What did I learn?
 * How to use Vector for distance calculating
-* How to code an 3D effect with 2D shapes
+* How to code a 3D effect with 2D shapes
